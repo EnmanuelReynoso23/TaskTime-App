@@ -1,0 +1,15 @@
+<StackLayout>
+  <Label text="TaskTime: Messenger" class="h1 text-center"></Label>
+  <ListView [items]="messages" class="list-group">
+    <ng-template let-message="item">
+      <StackLayout class="list-group-item">
+        <Label [text]="message.sender + ': ' + message.text"></Label>
+        <Label [text]="message.timestamp | date:'short'" class="text-muted"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+  <GridLayout rows="auto" columns="*, auto" class="p-20">
+    <TextField [(ngModel)]="newMessage" hint="Type a message" col="0" class="input"></TextField>
+    <Button text="Send" (tap)="sendMessage()" col="1" class="btn btn-primary"></Button>
+  </GridLayout>
+</StackLayout>

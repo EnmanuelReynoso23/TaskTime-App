@@ -1,0 +1,12 @@
+<GridLayout rows="auto, auto, auto" class="p-20">
+  <Label text="Top 3 Tasks" row="0" class="h2"></Label>
+  <ListView [items]="topTasks" row="1">
+    <ng-template let-task="item" let-i="index">
+      <GridLayout columns="*, auto, auto" class="list-group-item">
+        <Label [text]="task.text" col="0"></Label>
+        <Button text="Complete" (tap)="completeTask(i)" col="1" class="btn btn-primary"></Button>
+        <Button text="Postpone" (tap)="postponeTask(i)" col="2" class="btn btn-secondary"></Button>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

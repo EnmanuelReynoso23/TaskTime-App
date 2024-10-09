@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-bar {
+  background-color: #f0f0f0;
+  padding: 10;
+}
+
+.nav-button {
+  flex: 1;
+  text-align: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.btn {
+  font-size: 12;
+  padding: 5 10;
+  margin: 5;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.input {
+  font-size: 14;
+  padding: 5;
+}
+
+.list-group-item {
+  padding: 10;
+  border-bottom-width: 1;
+  border-bottom-color: #ccc;
+}
+
+.text-muted {
+  color: #6c757d;
+}

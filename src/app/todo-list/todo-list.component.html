@@ -1,0 +1,31 @@
+<ScrollView>
+  <StackLayout>
+    <Label text="TaskTime: To-Do List" class="h1 text-center"></Label>
+    <GridLayout rows="auto, auto, auto, auto, *" class="p-20">
+      <StackLayout row="0" orientation="horizontal">
+        <TextField [(ngModel)]="newTodoText" hint="Enter a new task" class="input" width="70%"></TextField>
+        <Button text="Add" (tap)="addTodo()" class="btn btn-primary" width="30%"></Button>
+      </StackLayout>
+      <GridLayout rows="auto, auto" columns="*, *" row="1" class="m-y-10">
+        <ListPicker [items]="categories" [(ngModel)]="selectedCategory" row="0" col="0"></ListPicker>
+        <ListPicker [items]="['low', 'medium', 'high']" [(ngModel)]="selectedPriority" row="0" col="1"></ListPicker>
+        <DatePicker [(ngModel)]="dueDate" row="1" col="0"></DatePicker>
+        <DatePicker [(ngModel)]="reminder" row="1" col="1"></DatePicker>
+      </GridLayout>
+      <ListView [items]="todos" row="4" class="list-group">
+        <ng-template let-todo="item" let-i="index">
+          <GridLayout columns="auto, *, auto, auto" class="list-group-item">
+            <CheckBox [checked]="todo.completed" (checkedChange)="toggleTodo(todo)" col="0"></CheckBox>
+            <StackLayout col="1">
+              <Label [text]="todo.text" [class.completed]="todo.completed"></Label>
+              <Label [text]="'Due: ' + (todo.dueDate | date:'short')" class="text-muted"></Label>
+              <Label [text]="'Category: ' + todo.category + ' | Priority: ' + todo.priority" class="text-muted"></Label>
+            </StackLayout>
+            <Button text="Edit" col="2" class="btn btn-secondary"></Button>
+            <Button text="Delete" (tap)="deleteTodo(i)" col="3" class="btn btn-danger"></Button>
+          </GridLayout>
+        </ng-template>
+      </ListView>
+    </GridLayout>
+  </StackLayout>
+</ScrollView>

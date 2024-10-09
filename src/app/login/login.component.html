@@ -1,0 +1,7 @@
+<StackLayout class="form p-20">
+  <Label text="TaskTime Login" class="h1 text-center"></Label>
+  <TextField [(ngModel)]="email" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" class="input"></TextField>
+  <TextField [(ngModel)]="password" hint="Password" secure="true" class="input"></TextField>
+  <Button text="Login" (tap)="login()" class="btn btn-primary"></Button>
+  <Button text="Register" (tap)="register()" class="btn btn-secondary"></Button>
+</StackLayout>

@@ -1,0 +1,26 @@
+<ScrollView>
+  <StackLayout>
+    <Label text="TaskTime: Calendar" class="h1 text-center"></Label>
+    <GridLayout rows="auto, auto, *" class="p-20">
+      <StackLayout row="0" class="form">
+        <TextField [(ngModel)]="newEventTitle" hint="Event Title" class="input"></TextField>
+        <DatePicker [(ngModel)]="newEventStartDate"></DatePicker>
+        <DatePicker [(ngModel)]="newEventEndDate"></DatePicker>
+        <TextView [(ngModel)]="newEventNotes" hint="Event Notes" class="input"></TextView>
+        <Button text="Add Event" (tap)="addEvent()" class="btn btn-primary"></Button>
+      </StackLayout>
+      <ListView [items]="events" row="2" class="list-group">
+        <ng-template let-event="item">
+          <GridLayout columns="*, auto" class="list-group-item">
+            <StackLayout col="0">
+              <Label [text]="event.title" class="font-weight-bold"></Label>
+              <Label [text]="'Start: ' + (event.startDate | date:'short')" class="text-muted"></Label>
+              <Label [text]="'End: ' + (event.endDate | date:'short')" class="text-muted"></Label>
+              <Label [text]="event.notes" *ngIf="event.notes" class="text-muted"></Label>
+            </StackLayout>
+          </GridLayout>
+        </ng-template>
+      </ListView>
+    </GridLayout>
+  </StackLayout>
+</ScrollView>
