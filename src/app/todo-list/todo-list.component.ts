@@ -26,7 +26,7 @@ export class TodoListComponent {
   dueDate: Date = new Date();
   reminder: Date = new Date();
 
-  constructor(private localNotifications: LocalNotifications) {}
+  constructor(private localNotifications: typeof LocalNotifications) {}
 
   addTodo() {
     if (this.newTodoText.trim()) {

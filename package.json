@@ -22,13 +22,13 @@
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~18.0.0",
+    "@angular-devkit/build-angular": "^18.2.8",
     "@angular/compiler-cli": "~18.0.0",
     "@nativescript/preview-cli": "^1.0.13",
     "@nativescript/stackblitz": "^0.0.8",
     "@nativescript/tailwind": "^2.1.0",
     "@nativescript/types-minimal": "~8.8.0",
-    "@nativescript/webpack": "~5.0.0",
+    "@nativescript/webpack": "^4.1.0",
     "@ngtools/webpack": "~18.0.0",
     "tailwindcss": "~3.4.0",
     "typescript": "~5.4.0"

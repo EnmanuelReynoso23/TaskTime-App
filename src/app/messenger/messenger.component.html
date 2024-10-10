@@ -10,6 +10,6 @@
   </ListView>
   <GridLayout rows="auto" columns="*, auto" class="p-20">
     <TextField [(ngModel)]="newMessage" hint="Type a message" col="0" class="input"></TextField>
-    <Button text="Send" (tap)="sendMessage()" col="1" class="btn btn-primary"></Button>
+    <Button text="Send" title="Send Message" (tap)="sendMessage()" col="1" class="btn btn-primary"></Button>
   </GridLayout>
 </StackLayout>

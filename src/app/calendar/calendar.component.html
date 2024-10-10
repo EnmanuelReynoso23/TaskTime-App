@@ -7,7 +7,7 @@
         <DatePicker [(ngModel)]="newEventStartDate"></DatePicker>
         <DatePicker [(ngModel)]="newEventEndDate"></DatePicker>
         <TextView [(ngModel)]="newEventNotes" hint="Event Notes" class="input"></TextView>
-        <Button text="Add Event" (tap)="addEvent()" class="btn btn-primary"></Button>
+        <Button text="Add Event" title="Add Event" (tap)="addEvent()" class="btn btn-primary"></Button>
       </StackLayout>
       <ListView [items]="events" row="2" class="list-group">
         <ng-template let-event="item">

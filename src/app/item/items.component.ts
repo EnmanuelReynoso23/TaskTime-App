@@ -17,7 +17,7 @@ export class ItemsComponent implements OnInit {
     // Setup large titles on iOS
     this.page.on('loaded', (args) => {
       if (__IOS__) {
-        const navigationController: UINavigationController =
+        const navigationController: any =
           this.page.frame.ios.controller;
         navigationController.navigationBar.prefersLargeTitles = true;
       }
